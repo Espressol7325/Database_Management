@@ -1,0 +1,50 @@
+﻿--Tính tổng hoa hồng theo thứ tự giảm dần của từng sản phẩm theo tên sản phẩm
+select nonempty([Measures].[Commision]) on columns,
+	   nonempty(order([Dim Product].[Product Name].[Product Name],[Measures].[Commision],desc)) on rows
+from [Travel_Insurance_View_Cube];
+
+-- Tính tổng hoa hồng của sản phẩm nhất định (Ex: Value Plan)
+select nonempty([Measures].[Commision]) on columns
+from [Travel_Insurance_View_Cube]
+where [Dim Product].[Product Name].[Product Name].[Value Plan];
+
+-- Tính tổng hoa hồng của 5 sản phẩm có hoa hồng cao nhất
+select nonempty([Measures].[Commision]) on columns,
+	   nonempty(
+		topcount([Dim Product].[Product Name].[Product Name],5,[Measures].[Commision])
+		) on rows
+from [Travel_Insurance_View_Cube];
+
+
+-- Tính tổng thời gian khách du lịch đã dừng chân tại Việt Nam
+select [Measures].[Duration] on columns,
+	   [Dim Destination].[Destination].[Destination].[Viet Nam] on rows
+from [Travel_Insurance_View_Cube];
+
+select [Measures].[Duration] on columns
+from [Travel_Insurance_View_Cube]
+where [Dim Destination].[Destination].[Destination].[Viet Nam];
+
+--Tính tổng thời gian các loại đại lý đã cung cấp từng sản phẩm bảo hiểm
+select nonempty([Dim Product].[Product Name].[Product Name]) on rows,
+	   nonempty([Dim Agency].[Agency Type].[Agency Type]) on columns
+from [Travel_Insurance_View_Cube]
+where [Measures].[Duration];
+
+--Tổng số địa điểm du lịch có thời gian và hoa hồng bảo hiểm(lớn hơn 0) mà từng loại đại lý đã cung cấp
+with
+member [Measures].[Duration Count] as
+	sum
+	([Dim Destination].[Destination].[Destination],
+	Iif
+	([Measures].[Duration] > 0, 1, 0))
+member [Measures].[Commisions Count] as
+	sum
+	(nonempty(
+		[Dim Destination].[Destination].[Destination],
+		[Measures].[Commision]),
+	Iif
+	([Measures].[Commision] > 0, 1, 0))
+select {[Measures].[Duration Count], [Measures].[Commisions Count]} on columns,
+	   nonempty([Dim Agency].[Agency Type].[Agency Type]) on rows
+from [Travel_Insurance_View_Cube];

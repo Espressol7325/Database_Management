@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme version="2.0" title="" description="">
+	<nodes>
+		<node id="0" name="CSV File Import" qualified_name="Orange.widgets.data.owcsvimport.OWCSVFileImport" project_name="Orange3" version="" title="CSV File Import" position="(150, 150)" />
+		<node id="1" name="Edit Domain" qualified_name="Orange.widgets.data.oweditdomain.OWEditDomain" project_name="Orange3" version="" title="Edit Domain" position="(281.0, 148.0)" />
+		<node id="2" name="Association Rules" qualified_name="orangecontrib.associate.widgets.owassociate.OWAssociate" project_name="Orange3-Associate" version="" title="Association Rules" position="(413.0, 149.0)" />
+	</nodes>
+	<links>
+		<link id="0" source_node_id="0" sink_node_id="1" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+		<link id="1" source_node_id="1" sink_node_id="2" source_channel="Data" sink_channel="Data" enabled="true" source_channel_id="data" sink_channel_id="data" />
+	</links>
+	<annotations />
+	<thumbnail />
+	<node_properties>
+		<properties node_id="0" format="literal">{'_session_items': [], '_session_items_v2': [({'type': 'AbsPath', 'path': 'D:/Data_Warehouse_and_Mining/DataForFinalTest/Apriori/basket_apriori.csv'}, {'encoding': 'utf-8', 'delimiter': ',', 'quotechar': '"', 'doublequote': True, 'skipinitialspace': True, 'quoting': 0, 'columntypes': [{'start': 0, 'stop': 17, 'value': 'Auto'}], 'rowspec': [{'start': 0, 'stop': 1, 'value': 'Header'}], 'decimal_separator': '.', 'group_separator': ''})], 'compatibility_mode': False, 'controlAreaVisible': True, 'dialog_state': {'directory': 'D:/Data_Warehouse_and_Mining/DataForFinalTest/Apriori', 'filter': 'Text - comma separated (*.csv, *)'}, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02t\x00\x00\x00\xe0\x00\x00\x03\x8b\x00\x00\x022\x00\x00\x02u\x00\x00\x00\xfe\x00\x00\x03\x8a\x00\x00\x021\x00\x00\x00\x00\x00\x00\x00\x00\x06\x00\x00\x00\x02u\x00\x00\x00\xfe\x00\x00\x03\x8a\x00\x00\x021', '__version__': 3}</properties>
+		<properties node_id="1" format="pickle">gASVBQMAAAAAAAB9lCiMFF9kb21haW5fY2hhbmdlX2hpbnRzlH2UKIwEUmVhbJQojAJJRJRLAIwB
+ZpSGlCmJdJSGlF2UjA1Bc0NhdGVnb3JpY2FslCmGlGFoAyiMBUFwcGxllEsDaAWGlCmJdJSGlF2U
+aAophpRhaAMojAVCcmVhZJRLA2gFhpQpiXSUhpRdlGgKKYaUYWgDKIwGQnV0dGVylEsDaAWGlCmJ
+dJSGlF2UaAophpRhaAMojAZDaGVlc2WUSwNoBYaUKYl0lIaUXZRoCimGlGFoAyiMBENvcm6USwNo
+BYaUKYl0lIaUXZRoCimGlGFoAyiMBERpbGyUSwNoBYaUKYl0lIaUXZRoCimGlGFoAyiMBEVnZ3OU
+SwNoBYaUKYl0lIaUXZRoCimGlGFoAyiMCUljZSBjcmVhbZRLA2gFhpQpiXSUhpRdlGgKKYaUYWgD
+KIwMS2lkbmV5IEJlYW5zlEsDaAWGlCmJdJSGlF2UaAophpRhaAMojARNaWxrlEsDaAWGlCmJdJSG
+lF2UaAophpRhaAMojAZOdXRtZWeUSwNoBYaUKYl0lIaUXZRoCimGlGFoAyiMBU9uaW9ulEsDaAWG
+lCmJdJSGlF2UaAophpRhaAMojAVTdWdhcpRLA2gFhpQpiXSUhpRdlGgKKYaUYWgDKIwHVW5pY29y
+bpRLA2gFhpQpiXSUhpRdlGgKKYaUYWgDKIwGWW9ndXJ0lEsDaAWGlCmJdJSGlF2UaAophpRhaAMo
+jAljaG9jb2xhdGWUSwNoBYaUKYl0lIaUXZRoCimGlGF1jBZfbWVyZ2VfZGlhbG9nX3NldHRpbmdz
+lH2UjBJjb250cm9sQXJlYVZpc2libGWUiIwRb3V0cHV0X3RhYmxlX25hbWWUjACUjBNzYXZlZFdp
+ZGdldEdlb21ldHJ5lENCAdnQywADAAAAAAG1AAAAWgAABEoAAAK4AAABtgAAAHgAAARJAAACtwAA
+AAAAAAAABgAAAAG2AAAAeAAABEkAAAK3lIwLX192ZXJzaW9uX1+USwN1Lg==
+</properties>
+		<properties node_id="2" format="literal">{'autoFind': False, 'autoSend': True, 'classify': False, 'controlAreaVisible': True, 'filterAntecedentMax': 2, 'filterAntecedentMin': 1, 'filterConsequentMax': 2, 'filterConsequentMin': 1, 'filterKeywordsAntecedent': '1', 'filterKeywordsConsequent': '1', 'filterSearch': True, 'maxRules': 20000, 'minConfidence': 55, 'minSupport': 10, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x014\x00\x00\x00\x81\x00\x00\x04\xcd\x00\x00\x02\xce\x00\x00\x015\x00\x00\x00\x9f\x00\x00\x04\xcc\x00\x00\x02\xcd\x00\x00\x00\x00\x00\x00\x00\x00\x06\x00\x00\x00\x015\x00\x00\x00\x9f\x00\x00\x04\xcc\x00\x00\x02\xcd', '__version__': 1}</properties>
+	</node_properties>
+	<session_state>
+		<window_groups />
+	</session_state>
+</scheme>
